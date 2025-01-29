@@ -37,7 +37,7 @@ export const runPromises = async <T extends Exclude<unknown, Promise<any>>>(
         if (!promise) {
           return;
         }
-        console.log(index);
+
         if (currentlyRunningPromises.has(index)) {
           throw new Error("Promise already running");
         }
@@ -78,7 +78,7 @@ export const runPromises = async <T extends Exclude<unknown, Promise<any>>>(
       if (!promise) {
         break;
       }
-      console.log({ index });
+
       currentlyRunningPromises.set(index, runPromise(index, promise));
     }
   });
